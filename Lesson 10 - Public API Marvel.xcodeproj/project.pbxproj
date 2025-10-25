@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DCFB61822EAD26D0009E02BB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB61812EAD26D0009E02BB /* Alamofire */; };
+		DCFB61852EAD271F009E02BB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB61842EAD271F009E02BB /* SwiftyJSON */; };
+		DCFB61882EAD2733009E02BB /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB61872EAD2733009E02BB /* SVProgressHUD */; };
+		DCFB618B2EAD274A009E02BB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = DCFB618A2EAD274A009E02BB /* SDWebImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DCFB61602EAD2593009E02BB /* Lesson 10 - Public API Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson 10 - Public API Marvel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -14,7 +21,7 @@
 		DCFB61722EAD2594009E02BB /* Exceptions for "Lesson 10 - Public API Marvel" folder in "Lesson 10 - Public API Marvel" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				SupportingFiles/Info.plist,
 			);
 			target = DCFB615F2EAD2593009E02BB /* Lesson 10 - Public API Marvel */;
 		};
@@ -36,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFB61882EAD2733009E02BB /* SVProgressHUD in Frameworks */,
+				DCFB61852EAD271F009E02BB /* SwiftyJSON in Frameworks */,
+				DCFB618B2EAD274A009E02BB /* SDWebImage in Frameworks */,
+				DCFB61822EAD26D0009E02BB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,10 @@
 			);
 			name = "Lesson 10 - Public API Marvel";
 			packageProductDependencies = (
+				DCFB61812EAD26D0009E02BB /* Alamofire */,
+				DCFB61842EAD271F009E02BB /* SwiftyJSON */,
+				DCFB61872EAD2733009E02BB /* SVProgressHUD */,
+				DCFB618A2EAD274A009E02BB /* SDWebImage */,
 			);
 			productName = "Lesson 10 - Public API Marvel";
 			productReference = DCFB61602EAD2593009E02BB /* Lesson 10 - Public API Marvel.app */;
@@ -107,6 +122,12 @@
 			);
 			mainGroup = DCFB61572EAD2593009E02BB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DCFB61802EAD26D0009E02BB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DCFB61832EAD271F009E02BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				DCFB61862EAD2733009E02BB /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				DCFB61892EAD274A009E02BB /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DCFB61612EAD2593009E02BB /* Products */;
 			projectDirPath = "";
@@ -147,12 +168,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2YV4FKPX66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lesson 10 - Public API Marvel/Info.plist";
+				INFOPLIST_FILE = "Lesson 10 - Public API Marvel/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -161,12 +182,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "felixCompany.Lesson-10---Public-API-Marvel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -179,12 +204,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2YV4FKPX66;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Lesson 10 - Public API Marvel/Info.plist";
+				INFOPLIST_FILE = "Lesson 10 - Public API Marvel/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -193,12 +218,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "felixCompany.Lesson-10---Public-API-Marvel";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -345,6 +374,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCFB61802EAD26D0009E02BB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		DCFB61832EAD271F009E02BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		DCFB61862EAD2733009E02BB /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+		DCFB61892EAD274A009E02BB /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCFB61812EAD26D0009E02BB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFB61802EAD26D0009E02BB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DCFB61842EAD271F009E02BB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFB61832EAD271F009E02BB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		DCFB61872EAD2733009E02BB /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFB61862EAD2733009E02BB /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+		DCFB618A2EAD274A009E02BB /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCFB61892EAD274A009E02BB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCFB61582EAD2593009E02BB /* Project object */;
 }
