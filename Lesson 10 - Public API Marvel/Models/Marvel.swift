@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Marvel: Codable {
+struct Marvel: nonisolated Codable {
     let code: Int
     let status: String
     let copyright: String
-    let atributionText: String
-    let atributionsHTML: String
+    let attributionText: String
+    let attributionHTML: String
     let data: MarvelCharacterData
     let etag: String
     
@@ -37,12 +37,12 @@ struct Marvel: Codable {
 //    }
 }
 
-struct MarvelCharacterData: Codable {
+struct MarvelCharacterData: Codable, Sendable {
     let offset: Int
     let total: Int
     let limit: Int
     let count: Int
-    let results: [Character]
+    let results: [MarvelCharacter]
     
 //    init(MarevelCharacterData: [String: Any]) {
 //        offset = MarevelCharacterData["offset"] as? Int ?? 0
@@ -55,11 +55,11 @@ struct MarvelCharacterData: Codable {
 //    }
 }
 
-struct Character: Codable {
+struct MarvelCharacter: Codable, Sendable {
     let id: Int
     let name: String
     let description: String
-    let modified: Date
+    let modified: String
     let resourceURI: String
     let urls: [MarvelCharacterURL]
     let thumbnail: MarvelCharacterThumbnail
@@ -95,7 +95,7 @@ struct Character: Codable {
 //    }
 }
 
-struct MarvelCharacterURL: Codable{
+struct MarvelCharacterURL: Codable, Sendable {
     let type, url: String
     
 //    init(MarevelCharacterURLDetails: [String: String]) {
@@ -104,8 +104,16 @@ struct MarvelCharacterURL: Codable{
 //    }
 }
 
-struct MarvelCharacterThumbnail: Codable {
+struct MarvelCharacterThumbnail: Codable, Sendable {
     let path, `extension`: String
+    
+    var thumbnailURL: URL {
+        let preparedURL = path.replacingOccurrences(
+            of: "http://",
+            with: "https://"
+        )
+        return URL(string: "\(preparedURL).\(self.extension)") ?? URL(string: "")!
+    }
     
 //    init(MarevelCharacterThumbnailDetails: [String: String]) {
 //        path = MarevelCharacterThumbnailDetails["path"]  ?? ""
@@ -113,7 +121,7 @@ struct MarvelCharacterThumbnail: Codable {
 //    }
 }
 
-struct MarvelCharacterComics: Codable {
+struct MarvelCharacterComics: Codable, Sendable {
     let available, returned: Int
     let collectionURI: String
     let items: [MarvelCharacterComicsItem]
@@ -127,7 +135,7 @@ struct MarvelCharacterComics: Codable {
 //    }
 }
 
-struct MarvelCharacterComicsItem: Codable {
+struct MarvelCharacterComicsItem: Codable, Sendable {
     let resourceURI, name: String
     
 //    init(MarevelCharacterComicsItemDetails: [String: String]) {
@@ -136,7 +144,7 @@ struct MarvelCharacterComicsItem: Codable {
 //    }
 }
 
-struct MarvelCharacterStories: Codable {
+struct MarvelCharacterStories: Codable, Sendable {
     let available, returned: Int
     let collectionURI: String
     let items: [MarvelCharacterStoriesItem]
@@ -150,7 +158,7 @@ struct MarvelCharacterStories: Codable {
 //    }
 }
 
-struct MarvelCharacterStoriesItem: Codable {
+struct MarvelCharacterStoriesItem: Codable, Sendable {
     let resourceURI, type, name: String
     
 //    init(MarevelCharacterStoriesItem: [String: String]) {
@@ -160,7 +168,7 @@ struct MarvelCharacterStoriesItem: Codable {
 //    }
 }
 
-struct MarvelCharacterEvents: Codable {
+struct MarvelCharacterEvents: Codable, Sendable {
     let available, returned: Int
     let collectionURI: String
     let items: [MarvelCharacterEventsItem]
@@ -174,7 +182,7 @@ struct MarvelCharacterEvents: Codable {
 //    }
 }
 
-struct MarvelCharacterEventsItem: Codable {
+struct MarvelCharacterEventsItem: Codable, Sendable {
     let resourceURI, name: String
     
 //    init(MarevelCharacterEventsItemDetails: [String: String]) {
@@ -184,7 +192,7 @@ struct MarvelCharacterEventsItem: Codable {
 //    }
 }
 
-struct MarvelCharacterSeries: Codable {
+struct MarvelCharacterSeries: Codable, Sendable {
     let available, returned: Int
     let collectionURI: String
     let items: [MarvelCharacterSeriesItem]
@@ -198,7 +206,7 @@ struct MarvelCharacterSeries: Codable {
 //    }
 }
 
-struct MarvelCharacterSeriesItem: Codable {
+struct MarvelCharacterSeriesItem: Codable, Sendable {
     let resourceURI, name: String
     
 //    init(MarevelCharacterSeriesItemDetails: [String: String]) {

@@ -6,18 +6,28 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HeroTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var heroPhotoImageView: UIImageView!
+    @IBOutlet weak var heroNameLabel: UILabel!
+    @IBOutlet weak var heroDescriptionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-
+    
+    func configure(with hero: MarvelCharacter) {
+        heroPhotoImageView.sd_setImage(with: hero.thumbnail.thumbnailURL)
+        heroNameLabel.text = hero.name
+        heroDescriptionLabel.text = hero.description
+    }
 }
